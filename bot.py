@@ -1,9 +1,11 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler
 from dotenv import load_dotenv
+import os
 
 # Токен вашего бота, полученный у BotFather
 load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 async def start(update: Update, context):
     keyboard = [[InlineKeyboardButton("Показать картинку 📸", callback_data='show_image')]]
@@ -31,4 +33,5 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
+
     main()
