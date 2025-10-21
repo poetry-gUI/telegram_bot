@@ -21,7 +21,7 @@ async def button_callback(update: Update, context):
             await query.edit_message_media(media=image_file.read())
 
 def main():
-    application = ApplicationBuilder().token(TOKEN).build()
+    application = ApplicationBuilder().token(BOT_TOKEN).build()
     
     # Обработчик команды /start
     application.add_handler(CommandHandler("start", start))
@@ -35,3 +35,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+
